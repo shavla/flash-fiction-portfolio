@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "title": "Flash Fiction Portfolio",
+    "description": "A collection of flash fiction stories"
+  },
+  "home": {
+    "title": "Home",
+    "photoAlt": "Photo of the author"
+  },
+  "flash": {
+    "title": "Flash fiction"
+  },
+  "story": {
+    "back": "All stories"
+  },
+  "notFound": "not found man"
+}

@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
+/* Book palette: cream paper, brown ink, burgundy leather */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f0e4; /* paper */
+  --foreground: #3a2e26; /* ink */
+  --muted: #76624f; /* faded ink: dates, captions */
+  --accent: #8c3b2e; /* burgundy: links, highlights */
+  --card: #fcf8f0; /* lighter page for cards */
+  --line: #e2d5bf; /* borders */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --color-line: var(--line);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Night reading: dark leather, candle-lit text */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1e1915;
+    --foreground: #e9dfcf;
+    --muted: #a89684;
+    --accent: #d9926f;
+    --card: #27201b;
+    --line: #3d322a;
   }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--card);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font: 13px/100% Apple SD Gothic Neo, "Apple SD 산돌고딕 Neo", "Roboto", "맑은 고딕",
+    "Malgun Gothic", "Apple Gothic", "나눔고딕", "Nanum Gothic", "돋움", Dotum, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
 }
