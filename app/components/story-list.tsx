@@ -18,7 +18,7 @@ export default function StoryList({ stories, locale }: { stories: Story[]; local
               dateTime={story.date.toISOString()}
               className="text-sm text-muted"
             >
-              hehe
+              heheff
               {formatDate(story.date, locale)}
             </time>
             <p className="mt-2 italic text-foreground/80">{story.excerpt}</p>
