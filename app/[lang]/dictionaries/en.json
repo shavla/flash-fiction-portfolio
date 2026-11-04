@@ -1,14 +1,13 @@
 {
   "metadata": {
-    "title": "Flash Fiction Portfolio",
-    "description": "A collection of flash fiction stories"
+    "title": "Short Stories Portfolio",
+    "description": "A collection of short stories"
   },
   "home": {
-    "title": "Home",
-    "photoAlt": "Photo of the author"
-  },
-  "flash": {
-    "title": "Flash fiction"
+    "title": "Short Stories Portfolio",
+    "quote": "A small collection of stories written by someone who probably should have been doing something else",
+    "photoAlt": "Photo of the author",
+    "subTitle": "Things that seemed like good ideas when I started writing them"
   },
   "story": {
     "back": "All stories"

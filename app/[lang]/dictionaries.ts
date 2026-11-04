@@ -1,17 +1,15 @@
 import { lang } from "next/root-params";
 import { notFound } from "next/navigation";
+import { hasLocale, type Locale } from "@/app/lib/i18n";
+import type en from "./dictionaries/en.json";
 
-const dictionaries = {
+// English is the reference: every other language must have the same keys
+type Dictionary = typeof en;
+
+const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
   ka: () => import("./dictionaries/ka.json").then((module) => module.default),
 };
-
-export type Locale = keyof typeof dictionaries;
-
-export const locales = Object.keys(dictionaries) as Locale[];
-
-export const hasLocale = (locale: string): locale is Locale =>
-  locale in dictionaries;
 
 export const getLocale = async () => {
   const locale = await lang();

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { lang } from "next/root-params";
 import "../globals.css";
-import { getDictionary, locales } from "./dictionaries";
+import { locales } from "@/app/lib/i18n";
+import { getDictionary } from "./dictionaries";
 import LanguageSwitcher from "@/app/components/language-switcher";
 
 const geistSans = Geist({

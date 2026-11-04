@@ -1,8 +1,9 @@
 import Link from "next/link";
-import type { Locale } from "@/app/[lang]/dictionaries";
-import { formatDate, type Story } from "@/app/lib/stories";
+import { formatDate } from "@/app/lib/format-date";
+import type { Locale } from "@/app/lib/i18n";
+import type { StoryMeta } from "@/app/types/story";
 
-export default function StoryList({ stories, locale }: { stories: Story[]; locale: Locale }) {
+export default function StoryList({ stories, locale }: { stories: StoryMeta[]; locale: Locale }) {
   return (
     <ul className="flex flex-col gap-4">
       {stories.map((story) => (
@@ -18,7 +19,6 @@ export default function StoryList({ stories, locale }: { stories: Story[]; local
               dateTime={story.date.toISOString()}
               className="text-sm text-muted"
             >
-              heheff
               {formatDate(story.date, locale)}
             </time>
             <p className="mt-2 italic text-foreground/80">{story.excerpt}</p>

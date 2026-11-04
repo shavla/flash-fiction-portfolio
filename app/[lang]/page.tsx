@@ -9,25 +9,25 @@ export default async function Home() {
 
   return (
     <main className="mx-auto w-full max-w-2xl px-6 py-16">
-      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+      <div className="flex flex-col items-center gap-6 sm:h-35 sm:items-start sm:flex-row">
         <Image
           src="/images/profile.png"
           alt={dict.home.photoAlt}
-          width={112}
-          height={112}
+          width={120}
+          height={120}
           loading="eager"
-          className="size-30 rounded-full object-cover object-top-right ring-2 ring-accent/40 ring-offset-4 ring-offset-background"
+          className="size-30 shrink-0 rounded-full object-cover object-top-right ring-2 ring-accent/40 ring-offset-4 ring-offset-background"
         />
-        <div>
-          <h1 className="mb-2 text-4xl font-bold">
-            {dict.metadata.title}
+        <div className="min-w-0">
+          <h1 className="text-4xl font-bold text-center sm:text-left">
+            {dict.home.title}
           </h1>
-          <p className="text-muted">{dict.metadata.description}</p>
+          <p className="text-muted text-sm text-center sm:text-left mt-4">{dict.home.quote}</p>
         </div>
       </div>
 
       <h2 className="mt-10 mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
-        {dict.flash.title}
+        {dict.home.subTitle}
       </h2>
       <StoryList stories={getStories(locale)} locale={locale} />
     </main>

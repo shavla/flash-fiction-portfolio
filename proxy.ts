@@ -1,19 +1,17 @@
 import { NextResponse, type NextRequest } from "next/server";
-
-const locales = ["en", "ka"];
-const defaultLocale = "en";
+import { defaultLocale, hasLocale, locales } from "@/app/lib/i18n";
 
 function getLocale(request: NextRequest) {
   // 1. Language the user picked with the switcher
   const saved = request.cookies.get("NEXT_LOCALE")?.value;
-  if (saved && locales.includes(saved)) return saved;
+  if (saved && hasLocale(saved)) return saved;
 
   // 2. Browser language preference
   const acceptLanguage = request.headers.get("accept-language") ?? "";
   const preferred = acceptLanguage
     .split(",")
     .map((part) => part.split(";")[0].trim().slice(0, 2).toLowerCase())
-    .find((code) => locales.includes(code));
+    .find(hasLocale);
 
   return preferred ?? defaultLocale;
 }
